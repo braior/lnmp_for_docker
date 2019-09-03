@@ -1,0 +1,2 @@
+# lnmp_for_docker
+用docker构建lnmp环境并上线农场
