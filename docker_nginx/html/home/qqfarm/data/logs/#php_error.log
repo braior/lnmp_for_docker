@@ -1,0 +1,40 @@
+Message: [2019/09/01 12:42:35] /home/qqfarm/index.php?mod=cron 
+  Error: filemtime(): stat failed for /usr/local/nginx/html/home/qqfarm/data/cron/run.lock 
+         on line 17 in /usr/local/nginx/html/home/qqfarm/source/cron/run.php 
+  Errno: 2 
+ 
+Message: [2019/09/01 12:42:35] /home/qqfarm/index.php?mod=cron 
+  Error: filemtime(): stat failed for /usr/local/nginx/html/home/qqfarm/data/cron/1567267201.daily 
+         on line 39 in /usr/local/nginx/html/home/qqfarm/source/cron/run.php 
+  Errno: 2 
+ 
+Message: [2019/09/01 12:42:35] /home/qqfarm/index.php?mod=cron 
+  Error: filemtime(): stat failed for /usr/local/nginx/html/home/qqfarm/data/cron/1567288801.weather 
+         on line 39 in /usr/local/nginx/html/home/qqfarm/source/cron/run.php 
+  Errno: 2 
+ 
+Message: [2019/09/01 12:42:35] /home/qqfarm/index.php?mod=cron 
+  Error: filemtime(): stat failed for /usr/local/nginx/html/home/qqfarm/data/cron/1567296001.bad 
+         on line 39 in /usr/local/nginx/html/home/qqfarm/source/cron/run.php 
+  Errno: 2 
+ 
+Message: [2019/09/01 03:05:33] /home/qqfarm/mync.php?mod=repertory&act=buySeed 
+  Error: in_array() expects parameter 2 to be array, null given 
+         on line 21 in /usr/local/nginx/html/home/qqfarm/source/nc/mod/repertory_buyseed.php 
+  Errno: 2 
+ 
+Message: [2019/09/02 09:00:41] /home/qqfarm/index.php?mod=cron 
+  Error: filemtime(): stat failed for /usr/local/nginx/html/home/qqfarm/data/cron/1567353601.daily 
+         on line 39 in /usr/local/nginx/html/home/qqfarm/source/cron/run.php 
+  Errno: 2 
+ 
+Message: [2019/09/02 09:00:41] /home/qqfarm/index.php?mod=cron 
+  Error: filemtime(): stat failed for /usr/local/nginx/html/home/qqfarm/data/cron/1567375201.weather 
+         on line 39 in /usr/local/nginx/html/home/qqfarm/source/cron/run.php 
+  Errno: 2 
+ 
+Message: [2019/09/02 09:00:41] /home/qqfarm/index.php?mod=cron 
+  Error: filemtime(): stat failed for /usr/local/nginx/html/home/qqfarm/data/cron/1567382401.bad 
+         on line 39 in /usr/local/nginx/html/home/qqfarm/source/cron/run.php 
+  Errno: 2 
+ 

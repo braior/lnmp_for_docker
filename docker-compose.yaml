@@ -1,0 +1,92 @@
+
+version: "3.0"
+
+services:
+  nginx:
+    container_name: lnmp_nginx
+    image: braior/centos-7-nginx:1.15.5
+    hostname: nginx
+    volumes:
+      - /home/docker_nginx/html:/usr/local/nginx/html
+      - /home/docker_nginx/nginx.conf:/usr/local/nginx/conf/nginx.conf:ro
+      - /home/docker_nginx/conf.d:/usr/local/nginx/conf.d
+      - /home/docker_nginx/log:/var/log/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - php
+    links:
+      - php
+    deploy:
+      mode:
+        replicated
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+    networks:
+      lnmp:
+        ipv4_address: 172.18.0.2
+
+  mysql:
+    container_name: lnmp_mysql
+    image: braior/centos-7-mysql:5.7.27
+    hostname: mysql
+    volumes:
+      - /home/docker_mysql/data:/var/lib/mysql
+      - /home/docker_mysql/conf/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf:ro
+      - /home/docker_mysql/init:/docker-entrypoint-initdb.d
+      - /home/docker_mysql/logs:/var/log
+    environment:
+      MYSQL_ROOT_PASSWORD: "zxs142857.*"
+      MYSQL_USER: 'test'
+      MYSQL_PASS: 'zxs142857.*'
+    ports:
+      - "3306:3306"
+    deploy:
+      mode:
+        replicated
+      replicas: 1
+      restart_policy:
+        condition: on-faliure                
+        delay: 3s
+        max_attempts: 2
+    networks:
+      lnmp:
+        ipv4_address: 172.18.0.3
+
+  php:
+    container_name: lnmp_php
+    image: braior/centos-7-php:5.6.36
+    hostname: php
+    volumes:
+      - /home/docker_nginx/html:/usr/local/nginx/html
+      - /home/docker_php/conf/php.ini:/usr/local/php/etc/php.ini:ro
+      - /home/docker_php/conf/php-fpm.conf:/usr/local/php/etc/php-fpm.conf:ro
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    deploy:
+      mode:
+        replicated
+      replicas: 1
+      restart_policy:
+        condition: on-faliure
+        delay: 3s
+        max_attempts: 2
+    networks:
+      lnmp:
+        ipv4_address: 172.18.0.4
+      
+   
+networks:
+  lnmp:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16

@@ -1,0 +1,22 @@
+Ucenter的访问网址:
+http://47.110.58.173:8082/ucenter
+
+UCenter 创始人密码:farm
+
+
+DISCUZ!的访问网址:
+http://47.110.58.173:8082/bbs
+
+管理员访问网址:
+http://47.110.58.173:8082/bbs/admincp.php
+
+管理员帐号:admin 管理员密码:admin
+
+
+UCenter Home的访问网址:
+http://47.110.58.173:8082/home
+
+管理员访问网址:
+http://47.110.58.173:8082/home/admincp.php
+
+管理员帐号:admin 管理员密码:admin
