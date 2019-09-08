@@ -32,7 +32,7 @@ services:
 
   mysql:
     container_name: lnmp_mysql
-    image: braior/centos-7-mysql:5.7.27
+    image: mysql:5.7.27
     hostname: mysql
     volumes:
       - /home/docker_mysql/data:/var/lib/mysql
